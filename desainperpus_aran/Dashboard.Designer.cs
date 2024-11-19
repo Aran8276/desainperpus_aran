@@ -44,7 +44,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(152, 202);
+            pictureBox2.Location = new Point(152, 233);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(654, 269);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -56,7 +56,7 @@
             panel3.BackColor = Color.SandyBrown;
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(531, 8);
+            panel3.Location = new Point(531, 39);
             panel3.Name = "panel3";
             panel3.Size = new Size(221, 174);
             panel3.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(17, 106);
+            label4.Location = new Point(17, 126);
             label4.Name = "label4";
             label4.Size = new Size(187, 38);
             label4.TabIndex = 6;
@@ -75,7 +75,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(78, 19);
+            label5.Location = new Point(78, 39);
             label5.Name = "label5";
             label5.Size = new Size(64, 50);
             label5.TabIndex = 5;
@@ -86,7 +86,7 @@
             panel2.BackColor = Color.SandyBrown;
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(193, 8);
+            panel2.Location = new Point(193, 39);
             panel2.Name = "panel2";
             panel2.Size = new Size(221, 174);
             panel2.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(65, 106);
+            label3.Location = new Point(65, 126);
             label3.Name = "label3";
             label3.Size = new Size(90, 38);
             label3.TabIndex = 4;
@@ -105,7 +105,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(68, 19);
+            label2.Location = new Point(68, 39);
             label2.Name = "label2";
             label2.Size = new Size(85, 50);
             label2.TabIndex = 3;
@@ -119,7 +119,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Name = "Dashboard";
-            Size = new Size(959, 479);
+            Size = new Size(959, 540);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

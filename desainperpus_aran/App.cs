@@ -15,6 +15,7 @@ namespace desainperpus_aran
         public App()
         {
             InitializeComponent();
+            label1.Text = Model.name;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -54,7 +55,19 @@ namespace desainperpus_aran
 
         private void bLogOut_Click(object sender, EventArgs e)
         {
+            Form1 window = new Form1();
             this.Close();
+            window.Show();
+        }
+
+        private void pengembalianBuku1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void masterBuku1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

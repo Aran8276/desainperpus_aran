@@ -37,13 +37,13 @@
             bMasterSiswa = new Button();
             bDashboard = new Button();
             pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            label1 = new Label();
             pengembalianBuku1 = new PengembalianBuku();
+            dashboard1 = new Dashboard();
             peminjamanBuku1 = new PeminjamanBuku();
             masterBuku1 = new MasterBuku();
             masterSiswa1 = new MasterSiswa();
-            dashboard1 = new Dashboard();
-            panel1 = new Panel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -72,12 +72,12 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LemonChiffon;
-            splitContainer1.Panel2.Controls.Add(dashboard1);
             splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Panel2.Controls.Add(pengembalianBuku1);
+            splitContainer1.Panel2.Controls.Add(dashboard1);
             splitContainer1.Panel2.Controls.Add(peminjamanBuku1);
             splitContainer1.Panel2.Controls.Add(masterBuku1);
             splitContainer1.Panel2.Controls.Add(masterSiswa1);
+            splitContainer1.Panel2.Controls.Add(pengembalianBuku1);
             splitContainer1.Size = new Size(1262, 793);
             splitContainer1.SplitterDistance = 351;
             splitContainer1.TabIndex = 0;
@@ -170,60 +170,62 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pengembalianBuku1
-            // 
-            pengembalianBuku1.Location = new Point(-41, 76);
-            pengembalianBuku1.Name = "pengembalianBuku1";
-            pengembalianBuku1.Size = new Size(1199, 711);
-            pengembalianBuku1.TabIndex = 5;
-            // 
-            // peminjamanBuku1
-            // 
-            peminjamanBuku1.Location = new Point(-60, 76);
-            peminjamanBuku1.Name = "peminjamanBuku1";
-            peminjamanBuku1.Size = new Size(1199, 711);
-            peminjamanBuku1.TabIndex = 4;
-            // 
-            // masterBuku1
-            // 
-            masterBuku1.Location = new Point(-76, 85);
-            masterBuku1.Name = "masterBuku1";
-            masterBuku1.Size = new Size(1199, 711);
-            masterBuku1.TabIndex = 3;
-            // 
-            // masterSiswa1
-            // 
-            masterSiswa1.Location = new Point(-41, 85);
-            masterSiswa1.Name = "masterSiswa1";
-            masterSiswa1.Size = new Size(1199, 711);
-            masterSiswa1.TabIndex = 2;
-            // 
-            // dashboard1
-            // 
-            dashboard1.Location = new Point(-76, 96);
-            dashboard1.Name = "dashboard1";
-            dashboard1.Size = new Size(872, 537);
-            dashboard1.TabIndex = 1;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.SandyBrown;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(-18, 34);
+            panel1.Location = new Point(-46, 34);
             panel1.Name = "panel1";
-            panel1.Size = new Size(925, 69);
+            panel1.Size = new Size(953, 64);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(71, 11);
+            label1.Location = new Point(88, 18);
             label1.Name = "label1";
             label1.Size = new Size(172, 28);
             label1.TabIndex = 0;
             label1.Text = "Welcome Admin,";
             label1.Click += label1_Click;
+            // 
+            // pengembalianBuku1
+            // 
+            pengembalianBuku1.Location = new Point(1, 99);
+            pengembalianBuku1.Name = "pengembalianBuku1";
+            pengembalianBuku1.Size = new Size(903, 691);
+            pengembalianBuku1.TabIndex = 5;
+            pengembalianBuku1.Load += pengembalianBuku1_Load;
+            // 
+            // dashboard1
+            // 
+            dashboard1.Location = new Point(-2, 96);
+            dashboard1.Name = "dashboard1";
+            dashboard1.Size = new Size(906, 697);
+            dashboard1.TabIndex = 1;
+            // 
+            // peminjamanBuku1
+            // 
+            peminjamanBuku1.Location = new Point(1, 101);
+            peminjamanBuku1.Name = "peminjamanBuku1";
+            peminjamanBuku1.Size = new Size(903, 689);
+            peminjamanBuku1.TabIndex = 4;
+            // 
+            // masterBuku1
+            // 
+            masterBuku1.Location = new Point(1, 101);
+            masterBuku1.Name = "masterBuku1";
+            masterBuku1.Size = new Size(903, 689);
+            masterBuku1.TabIndex = 3;
+            masterBuku1.Load += masterBuku1_Load;
+            // 
+            // masterSiswa1
+            // 
+            masterSiswa1.Location = new Point(3, 104);
+            masterSiswa1.Name = "masterSiswa1";
+            masterSiswa1.Size = new Size(904, 689);
+            masterSiswa1.TabIndex = 2;
             // 
             // App
             // 

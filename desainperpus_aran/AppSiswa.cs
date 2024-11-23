@@ -34,5 +34,10 @@ namespace desainperpus_aran
         {
 
         }
+
+        private void AppSiswa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

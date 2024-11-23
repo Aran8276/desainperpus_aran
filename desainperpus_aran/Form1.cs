@@ -23,7 +23,7 @@ namespace desainperpus_aran
             string username = tUsername.Text;
             string password = tPassword.Text;
 
-            string sql = "SELECT * FROM [user] WHERE username = '"+ username + "' AND PASSWORD = '"+ password + "'";
+            string sql = "SELECT * FROM [user] WHERE username = '" + username + "' AND PASSWORD = '" + password + "'";
 
             command = new SqlCommand(sql, connection);
             adapter = new SqlDataAdapter(command);
@@ -71,6 +71,11 @@ namespace desainperpus_aran
         }
 
         private void bCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

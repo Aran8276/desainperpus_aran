@@ -69,5 +69,10 @@ namespace desainperpus_aran
         {
 
         }
+
+        private void App_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

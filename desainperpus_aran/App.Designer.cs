@@ -39,11 +39,11 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            pengembalianBuku1 = new PengembalianBuku();
             dashboard1 = new Dashboard();
             peminjamanBuku1 = new PeminjamanBuku();
             masterBuku1 = new MasterBuku();
             masterSiswa1 = new MasterSiswa();
+            pengembalianBuku1 = new PengembalianBuku();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -190,14 +190,6 @@
             label1.Text = "Welcome Admin,";
             label1.Click += label1_Click;
             // 
-            // pengembalianBuku1
-            // 
-            pengembalianBuku1.Location = new Point(1, 99);
-            pengembalianBuku1.Name = "pengembalianBuku1";
-            pengembalianBuku1.Size = new Size(903, 691);
-            pengembalianBuku1.TabIndex = 5;
-            pengembalianBuku1.Load += pengembalianBuku1_Load;
-            // 
             // dashboard1
             // 
             dashboard1.Location = new Point(-2, 96);
@@ -227,6 +219,14 @@
             masterSiswa1.Size = new Size(904, 689);
             masterSiswa1.TabIndex = 2;
             // 
+            // pengembalianBuku1
+            // 
+            pengembalianBuku1.Location = new Point(1, 99);
+            pengembalianBuku1.Name = "pengembalianBuku1";
+            pengembalianBuku1.Size = new Size(903, 691);
+            pengembalianBuku1.TabIndex = 5;
+            pengembalianBuku1.Load += pengembalianBuku1_Load;
+            // 
             // App
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -238,6 +238,7 @@
             Name = "App";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "App";
+            FormClosing += App_FormClosing;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();

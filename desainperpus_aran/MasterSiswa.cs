@@ -300,6 +300,7 @@ namespace desainperpus_aran
                 showData(); // Tampilkan data jika input kosong
             }
         }
+
         public void clearInput()
         {
             nis.Text = "";

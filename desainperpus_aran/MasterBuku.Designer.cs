@@ -138,6 +138,7 @@
             search.Name = "search";
             search.Size = new Size(205, 27);
             search.TabIndex = 26;
+            search.TextChanged += search_TextChanged;
             // 
             // label8
             // 

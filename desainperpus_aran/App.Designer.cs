@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(App));
             splitContainer1 = new SplitContainer();
+            refreshButton = new Button();
             bLogOut = new Button();
             bPengembalianBuku = new Button();
             bPeminjamanBuku = new Button();
@@ -39,11 +40,11 @@
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label1 = new Label();
-            dashboard1 = new Dashboard();
             peminjamanBuku1 = new PeminjamanBuku();
             masterBuku1 = new MasterBuku();
             masterSiswa1 = new MasterSiswa();
             pengembalianBuku1 = new PengembalianBuku();
+            dashboard1 = new Dashboard();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.SandyBrown;
+            splitContainer1.Panel1.Controls.Add(refreshButton);
             splitContainer1.Panel1.Controls.Add(bLogOut);
             splitContainer1.Panel1.Controls.Add(bPengembalianBuku);
             splitContainer1.Panel1.Controls.Add(bPeminjamanBuku);
@@ -73,14 +75,24 @@
             // 
             splitContainer1.Panel2.BackColor = Color.LemonChiffon;
             splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Panel2.Controls.Add(dashboard1);
             splitContainer1.Panel2.Controls.Add(peminjamanBuku1);
             splitContainer1.Panel2.Controls.Add(masterBuku1);
             splitContainer1.Panel2.Controls.Add(masterSiswa1);
             splitContainer1.Panel2.Controls.Add(pengembalianBuku1);
+            splitContainer1.Panel2.Controls.Add(dashboard1);
             splitContainer1.Size = new Size(1262, 793);
             splitContainer1.SplitterDistance = 351;
             splitContainer1.TabIndex = 0;
+            // 
+            // refreshButton
+            // 
+            refreshButton.Location = new Point(0, 743);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(347, 47);
+            refreshButton.TabIndex = 7;
+            refreshButton.Text = "Refresh Data";
+            refreshButton.UseVisualStyleBackColor = true;
+            refreshButton.Click += refreshButton_Click;
             // 
             // bLogOut
             // 
@@ -190,13 +202,6 @@
             label1.Text = "Welcome Admin,";
             label1.Click += label1_Click;
             // 
-            // dashboard1
-            // 
-            dashboard1.Location = new Point(-2, 96);
-            dashboard1.Name = "dashboard1";
-            dashboard1.Size = new Size(906, 697);
-            dashboard1.TabIndex = 1;
-            // 
             // peminjamanBuku1
             // 
             peminjamanBuku1.Location = new Point(1, 101);
@@ -226,6 +231,13 @@
             pengembalianBuku1.Size = new Size(903, 691);
             pengembalianBuku1.TabIndex = 5;
             pengembalianBuku1.Load += pengembalianBuku1_Load;
+            // 
+            // dashboard1
+            // 
+            dashboard1.Location = new Point(-2, 96);
+            dashboard1.Name = "dashboard1";
+            dashboard1.Size = new Size(906, 697);
+            dashboard1.TabIndex = 1;
             // 
             // App
             // 
@@ -266,5 +278,6 @@
         private MasterBuku masterBuku1;
         private PeminjamanBuku peminjamanBuku1;
         private PengembalianBuku pengembalianBuku1;
+        private Button refreshButton;
     }
 }

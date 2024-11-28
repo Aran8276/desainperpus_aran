@@ -21,14 +21,11 @@ namespace desainperpus_aran
         private void bLogOut_Click(object sender, EventArgs e)
         {
             Form1 window = new Form1();
-            this.Close();
+            this.Hide();
             window.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -38,6 +35,21 @@ namespace desainperpus_aran
         private void AppSiswa_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void bRiwayatPeminjaman_Click(object sender, EventArgs e)
+        {
+            riwayatPeminjaman1.BringToFront();
+        }
+
+        private void bRiwayatPengambilan_Click(object sender, EventArgs e)
+        {
+            riwayatPengembalian1.BringToFront();
+        }
+
+        private void bCariBuku_Click(object sender, EventArgs e)
+        {
+            cariBuku1.BringToFront();
         }
     }
 }

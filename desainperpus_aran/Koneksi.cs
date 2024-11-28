@@ -18,5 +18,7 @@ namespace desainperpus_aran
     public class Model
     {
         public static string name { get; set; }
+
+        public static string id { get; set; }
     }
 }

@@ -56,7 +56,7 @@ namespace desainperpus_aran
         private void bLogOut_Click(object sender, EventArgs e)
         {
             Form1 window = new Form1();
-            this.Close();
+            this.Hide();
             window.Show();
         }
 
@@ -73,6 +73,17 @@ namespace desainperpus_aran
         private void App_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            masterSiswa1.showData();
+            masterBuku1.showData();
+            peminjamanBuku1.showData();
+            pengembalianBuku1.showData();
+            peminjamanBuku1.ambilBuku();
+            peminjamanBuku1.ambilSiswa();
+            pengembalianBuku1.ambilPeminjaman();
         }
     }
 }

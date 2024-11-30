@@ -48,6 +48,7 @@ namespace desainperpus_aran
                     {
                         reader = command.ExecuteReader();
                         reader.Read();
+                        Model.id = reader.GetInt32(0).ToString();
                         Model.name = reader.GetString(1);
 
                         this.Hide();

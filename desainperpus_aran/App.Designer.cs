@@ -44,6 +44,7 @@
             masterBuku1 = new MasterBuku();
             masterSiswa1 = new MasterSiswa();
             pengembalianBuku1 = new PengembalianBuku();
+            refreshButton = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.SandyBrown;
+            splitContainer1.Panel1.Controls.Add(refreshButton);
             splitContainer1.Panel1.Controls.Add(bLogOut);
             splitContainer1.Panel1.Controls.Add(bPengembalianBuku);
             splitContainer1.Panel1.Controls.Add(bPeminjamanBuku);
@@ -227,6 +229,19 @@
             pengembalianBuku1.TabIndex = 5;
             pengembalianBuku1.Load += pengembalianBuku1_Load;
             // 
+            // refreshButton
+            // 
+            refreshButton.BackColor = Color.DodgerBlue;
+            refreshButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            refreshButton.ForeColor = SystemColors.Control;
+            refreshButton.Location = new Point(85, 697);
+            refreshButton.Name = "refreshButton";
+            refreshButton.Size = new Size(181, 59);
+            refreshButton.TabIndex = 7;
+            refreshButton.Text = "Refresh";
+            refreshButton.UseVisualStyleBackColor = false;
+            refreshButton.Click += refreshButton_Click;
+            // 
             // App
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -266,5 +281,6 @@
         private MasterBuku masterBuku1;
         private PeminjamanBuku peminjamanBuku1;
         private PengembalianBuku pengembalianBuku1;
+        private Button refreshButton;
     }
 }

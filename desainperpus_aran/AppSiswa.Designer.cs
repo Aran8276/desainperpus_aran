@@ -35,6 +35,8 @@
             bRiwayatPeminjaman = new Button();
             bCariBuku = new Button();
             pictureBox1 = new PictureBox();
+            riwayatPengembalian1 = new RiwayatPengembalian();
+            riwayatPeminjaman1 = new RiwayatPeminjaman();
             cariBuku1 = new CariBuku();
             panel1 = new Panel();
             label1 = new Label();
@@ -66,6 +68,8 @@
             splitContainer1.Panel2.BackColor = Color.LemonChiffon;
             splitContainer1.Panel2.Controls.Add(cariBuku1);
             splitContainer1.Panel2.Controls.Add(panel1);
+            splitContainer1.Panel2.Controls.Add(riwayatPengembalian1);
+            splitContainer1.Panel2.Controls.Add(riwayatPeminjaman1);
             splitContainer1.Size = new Size(1254, 805);
             splitContainer1.SplitterDistance = 348;
             splitContainer1.TabIndex = 1;
@@ -94,6 +98,7 @@
             bRiwayatPengambilan.TabIndex = 3;
             bRiwayatPengambilan.Text = "Riwayat Pengambilan";
             bRiwayatPengambilan.UseVisualStyleBackColor = true;
+            bRiwayatPengambilan.Click += bRiwayatPengambilan_Click;
             // 
             // bRiwayatPeminjaman
             // 
@@ -106,6 +111,7 @@
             bRiwayatPeminjaman.TabIndex = 2;
             bRiwayatPeminjaman.Text = "Riwayat Peminjaman";
             bRiwayatPeminjaman.UseVisualStyleBackColor = true;
+            bRiwayatPeminjaman.Click += bRiwayatPeminjaman_Click;
             // 
             // bCariBuku
             // 
@@ -118,6 +124,7 @@
             bCariBuku.TabIndex = 1;
             bCariBuku.Text = "Cari Buku";
             bCariBuku.UseVisualStyleBackColor = true;
+            bCariBuku.Click += bCariBuku_Click;
             // 
             // pictureBox1
             // 
@@ -128,6 +135,20 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // riwayatPengembalian1
+            // 
+            riwayatPengembalian1.Location = new Point(-2, 104);
+            riwayatPengembalian1.Name = "riwayatPengembalian1";
+            riwayatPengembalian1.Size = new Size(1085, 675);
+            riwayatPengembalian1.TabIndex = 3;
+            // 
+            // riwayatPeminjaman1
+            // 
+            riwayatPeminjaman1.Location = new Point(3, 104);
+            riwayatPeminjaman1.Name = "riwayatPeminjaman1";
+            riwayatPeminjaman1.Size = new Size(1085, 675);
+            riwayatPeminjaman1.TabIndex = 2;
             // 
             // cariBuku1
             // 
@@ -187,5 +208,7 @@
         private Panel panel1;
         private Label label1;
         private CariBuku cariBuku1;
+        private RiwayatPengembalian riwayatPengembalian1;
+        private RiwayatPeminjaman riwayatPeminjaman1;
     }
 }

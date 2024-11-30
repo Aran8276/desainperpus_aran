@@ -334,5 +334,10 @@ namespace desainperpus_aran
             tahun.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             stok.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
         }
+
+        private void search_TextChanged(object sender, EventArgs e)
+        {
+            searchData();
+        }
     }
 }

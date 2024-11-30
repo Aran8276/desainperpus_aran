@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox7 = new TextBox();
+            search = new TextBox();
             label8 = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
             bDelete = new Button();
-            bEdit = new Button();
             bInsert = new Button();
-            numericUpDown1 = new NumericUpDown();
-            label3 = new Label();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            label1 = new Label();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            dataGridView1 = new DataGridView();
+            idPeminjaman = new ComboBox();
+            label1 = new Label();
+            idBuku = new ComboBox();
+            label2 = new Label();
+            judulBuku = new TextBox();
+            label3 = new Label();
+            jumlahBuku = new NumericUpDown();
+            nisSiswa = new ComboBox();
+            label4 = new Label();
+            namaSiswa = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)jumlahBuku).BeginInit();
             SuspendLayout();
             // 
-            // textBox7
+            // search
             // 
-            textBox7.Location = new Point(176, 26);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(205, 27);
-            textBox7.TabIndex = 37;
+            search.Location = new Point(176, 26);
+            search.Name = "search";
+            search.Size = new Size(205, 27);
+            search.TabIndex = 37;
+            search.TextChanged += search_TextChanged;
             // 
             // label8
             // 
@@ -63,44 +66,19 @@
             label8.TabIndex = 36;
             label8.Text = "Search";
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Location = new Point(83, 68);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(788, 134);
-            tableLayoutPanel1.TabIndex = 35;
-            // 
             // bDelete
             // 
             bDelete.BackColor = Color.SandyBrown;
             bDelete.FlatAppearance.BorderSize = 0;
             bDelete.FlatStyle = FlatStyle.Flat;
             bDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bDelete.Location = new Point(385, 230);
+            bDelete.Location = new Point(338, 295);
             bDelete.Name = "bDelete";
-            bDelete.Size = new Size(112, 44);
+            bDelete.Size = new Size(193, 44);
             bDelete.TabIndex = 40;
             bDelete.Text = "Delete";
             bDelete.UseVisualStyleBackColor = false;
-            // 
-            // bEdit
-            // 
-            bEdit.BackColor = Color.SandyBrown;
-            bEdit.FlatAppearance.BorderSize = 0;
-            bEdit.FlatStyle = FlatStyle.Flat;
-            bEdit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bEdit.Location = new Point(233, 230);
-            bEdit.Name = "bEdit";
-            bEdit.Size = new Size(112, 44);
-            bEdit.TabIndex = 39;
-            bEdit.Text = "Edit";
-            bEdit.UseVisualStyleBackColor = false;
+            bDelete.Click += bDelete_Click;
             // 
             // bInsert
             // 
@@ -108,130 +86,172 @@
             bInsert.FlatAppearance.BorderSize = 0;
             bInsert.FlatStyle = FlatStyle.Flat;
             bInsert.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bInsert.Location = new Point(83, 230);
+            bInsert.Location = new Point(117, 295);
             bInsert.Name = "bInsert";
-            bInsert.Size = new Size(112, 44);
+            bInsert.Size = new Size(189, 44);
             bInsert.TabIndex = 38;
             bInsert.Text = "Insert";
             bInsert.UseVisualStyleBackColor = false;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(233, 406);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(67, 27);
-            numericUpDown1.TabIndex = 45;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(128, 406);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 28);
-            label3.TabIndex = 44;
-            label3.Text = "Jumlah";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(233, 320);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(183, 28);
-            comboBox2.TabIndex = 43;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(233, 364);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(312, 27);
-            textBox2.TabIndex = 42;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(128, 316);
-            label2.Name = "label2";
-            label2.Size = new Size(77, 28);
-            label2.TabIndex = 41;
-            label2.Text = "id Buku";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(233, 462);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(197, 28);
-            comboBox1.TabIndex = 48;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(233, 506);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(197, 27);
-            textBox1.TabIndex = 47;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(128, 458);
-            label1.Name = "label1";
-            label1.Size = new Size(43, 28);
-            label1.TabIndex = 46;
-            label1.Text = "NIS";
+            bInsert.Click += bInsert_Click;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveBorder;
-            panel1.Location = new Point(564, 230);
+            panel1.Location = new Point(598, 295);
             panel1.Name = "panel1";
             panel1.Size = new Size(244, 271);
             panel1.TabIndex = 49;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(35, 69);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(827, 200);
+            dataGridView1.TabIndex = 50;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // idPeminjaman
+            // 
+            idPeminjaman.FormattingEnabled = true;
+            idPeminjaman.Location = new Point(255, 371);
+            idPeminjaman.Name = "idPeminjaman";
+            idPeminjaman.Size = new Size(151, 28);
+            idPeminjaman.TabIndex = 51;
+            idPeminjaman.SelectedIndexChanged += idPeminjaman_SelectedIndexChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(35, 368);
+            label1.Name = "label1";
+            label1.Size = new Size(166, 31);
+            label1.TabIndex = 52;
+            label1.Text = "id Peminjaman";
+            // 
+            // idBuku
+            // 
+            idBuku.Enabled = false;
+            idBuku.FormattingEnabled = true;
+            idBuku.Location = new Point(256, 433);
+            idBuku.Name = "idBuku";
+            idBuku.Size = new Size(225, 28);
+            idBuku.TabIndex = 53;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(35, 433);
+            label2.Name = "label2";
+            label2.Size = new Size(90, 31);
+            label2.TabIndex = 54;
+            label2.Text = "id Buku";
+            // 
+            // judulBuku
+            // 
+            judulBuku.Enabled = false;
+            judulBuku.Location = new Point(255, 467);
+            judulBuku.Name = "judulBuku";
+            judulBuku.Size = new Size(225, 27);
+            judulBuku.TabIndex = 55;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(35, 514);
+            label3.Name = "label3";
+            label3.Size = new Size(162, 31);
+            label3.TabIndex = 56;
+            label3.Text = "Jumlah Pinjam";
+            // 
+            // jumlahBuku
+            // 
+            jumlahBuku.Enabled = false;
+            jumlahBuku.Location = new Point(255, 514);
+            jumlahBuku.Name = "jumlahBuku";
+            jumlahBuku.Size = new Size(224, 27);
+            jumlahBuku.TabIndex = 57;
+            // 
+            // nisSiswa
+            // 
+            nisSiswa.Enabled = false;
+            nisSiswa.FormattingEnabled = true;
+            nisSiswa.Location = new Point(257, 572);
+            nisSiswa.Name = "nisSiswa";
+            nisSiswa.Size = new Size(223, 28);
+            nisSiswa.TabIndex = 58;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(35, 572);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 31);
+            label4.TabIndex = 59;
+            label4.Text = "NIS";
+            // 
+            // namaSiswa
+            // 
+            namaSiswa.Enabled = false;
+            namaSiswa.Location = new Point(256, 606);
+            namaSiswa.Name = "namaSiswa";
+            namaSiswa.Size = new Size(223, 27);
+            namaSiswa.TabIndex = 60;
             // 
             // PengembalianBuku
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(panel1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox1);
-            Controls.Add(label1);
-            Controls.Add(numericUpDown1);
+            Controls.Add(namaSiswa);
+            Controls.Add(label4);
+            Controls.Add(nisSiswa);
+            Controls.Add(jumlahBuku);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
-            Controls.Add(textBox2);
+            Controls.Add(judulBuku);
             Controls.Add(label2);
+            Controls.Add(idBuku);
+            Controls.Add(label1);
+            Controls.Add(idPeminjaman);
+            Controls.Add(dataGridView1);
+            Controls.Add(panel1);
             Controls.Add(bDelete);
-            Controls.Add(bEdit);
             Controls.Add(bInsert);
-            Controls.Add(textBox7);
+            Controls.Add(search);
             Controls.Add(label8);
-            Controls.Add(tableLayoutPanel1);
             Name = "PengembalianBuku";
-            Size = new Size(959, 569);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            Size = new Size(959, 690);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)jumlahBuku).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox7;
+        private TextBox search;
         private Label label8;
-        private TableLayoutPanel tableLayoutPanel1;
         private Button bDelete;
         private Button bEdit;
         private Button bInsert;
         private NumericUpDown numericUpDown1;
-        private Label label3;
         private ComboBox comboBox2;
         private TextBox textBox2;
-        private Label label2;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private Label label1;
         private Panel panel1;
+        private DataGridView dataGridView1;
+        private ComboBox idPeminjaman;
+        private Label label1;
+        private ComboBox idBuku;
+        private Label label2;
+        private TextBox judulBuku;
+        private Label label3;
+        private NumericUpDown jumlahBuku;
+        private ComboBox nisSiswa;
+        private Label label4;
+        private TextBox namaSiswa;
     }
 }

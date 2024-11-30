@@ -43,7 +43,7 @@ namespace desainperpus_aran
 
                 string sql = "SELECT * from [siswa] " +
                     "INNER JOIN [user] ON [siswa].id_user = [user].id_user";
-
+                
                 command = new SqlCommand(sql, connection);
                 adapter = new SqlDataAdapter(command);
                 tabel = new DataTable();

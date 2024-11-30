@@ -56,7 +56,7 @@ namespace desainperpus_aran
         private void bLogOut_Click(object sender, EventArgs e)
         {
             Form1 window = new Form1();
-            this.Close();
+            this.Hide();
             window.Show();
         }
 
@@ -73,6 +73,17 @@ namespace desainperpus_aran
         private void App_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            masterSiswa1.showData(); // Refresh data siswa
+            masterBuku1.showData(); // Refresh data buku
+            peminjamanBuku1.showData(); // Refresh data peminjaman
+            pengembalianBuku1.showData(); // Refresh data pengembalian
+            peminjamanBuku1.ambilBuku(); // Refresh ComboBox Buku pada Peminjaman
+            peminjamanBuku1.ambilSiswa(); // Refresh ComboBox Siswa pada Peminjaman
+            pengembalianBuku1.ambilPeminjaman(); // Refresh ComboBox Peminjaman pada Pengembalian
         }
     }
 }

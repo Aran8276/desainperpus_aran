@@ -13,6 +13,7 @@ namespace desainperpus_aran
 {
     public partial class PengembalianBuku : UserControl
     {
+
         public SqlConnection connection = new SqlConnection(Koneksi.conn);
         public SqlCommand command;
         public SqlDataAdapter adapter;
@@ -163,6 +164,8 @@ namespace desainperpus_aran
                 reader.Read();
                 int stokTersedia = Convert.ToInt32(reader["stok"]);
 
+                string tanggalKembaliString = tanggalKembali.Value.Date.ToString("yyyy-MM-dd");
+
                 connection.Close();
                 connection.Open();
 
@@ -176,14 +179,14 @@ namespace desainperpus_aran
                 connection.Close();
                 connection.Open();
 
-
                 sql = @"
         SELECT [peminjaman].[tgl_pinjam], [peminjaman].[tgl_kembali],
-        DATEDIFF(day, [peminjaman].[tgl_pinjam], GETDATE()) AS offset
+        DATEDIFF(day, [peminjaman].[tgl_pinjam], @tanggalKembaliString) AS offset
         FROM [peminjaman]
         WHERE [peminjaman].[id_peminjaman] = @id_peminjaman";
                 command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@id_peminjaman", id_peminjaman);
+                command.Parameters.AddWithValue("@tanggalKembaliString", tanggalKembaliString);
                 reader = command.ExecuteReader();
                 reader.Read();
                 int offset = Convert.ToInt32(reader["offset"]);
@@ -193,28 +196,29 @@ namespace desainperpus_aran
                 connection.Open();
 
                 sql = @"
-        INSERT INTO [pengembalian]
-        (
-        id_peminjaman,
-        id_buku,
-        tgl_kembali,
-        denda)
-        
-        VALUES
-        (
-        @id_peminjaman, 
-        @id_buku, 
-        DATEADD(DAY, @offset_hari, GETDATE()), 
-        CASE 
-            WHEN DATEDIFF(DAY, @batas_pengumpulan, GETDATE()) < 0 THEN 0
-            ELSE DATEDIFF(DAY, @batas_pengumpulan, GETDATE()) * 1000
-        END
-        )";
+    INSERT INTO [pengembalian]
+    (
+    id_peminjaman,
+    id_buku,
+    tgl_kembali,
+    denda)
+    
+    VALUES
+    (
+    @id_peminjaman, 
+    @id_buku, 
+    @tanggalKembaliString, 
+    CASE 
+        WHEN DATEDIFF(DAY, @batas_pengumpulan, @tanggalKembaliString) < 0 THEN 0
+        ELSE DATEDIFF(DAY, @batas_pengumpulan, @tanggalKembaliString) * 1000
+    END
+    )";
                 command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@id_peminjaman", id_peminjaman);
                 command.Parameters.AddWithValue("@id_buku", id_buku);
                 command.Parameters.AddWithValue("@offset_hari", offset);
                 command.Parameters.AddWithValue("@batas_pengumpulan", batasPengumpulan);
+                command.Parameters.AddWithValue("@tanggalKembaliString", tanggalKembaliString);
                 command.ExecuteNonQuery();
 
                 connection.Close();
@@ -222,11 +226,11 @@ namespace desainperpus_aran
 
                 sql = @"
         UPDATE [peminjaman] SET
-        tgl_kembali = DATEADD(DAY, @offset, GETDATE()), 
+        tgl_kembali = @tanggalKembaliString, 
         durasi_pinjam = @offset,
         denda = CASE 
-                    WHEN DATEDIFF(DAY, @batas_pengumpulan, GETDATE()) < 0 THEN 0
-                    ELSE DATEDIFF(DAY, @batas_pengumpulan, GETDATE()) * 1000
+                    WHEN DATEDIFF(DAY, @batas_pengumpulan, @tanggalKembaliString) < 0 THEN 0
+                    ELSE DATEDIFF(DAY, @batas_pengumpulan, @tanggalKembaliString) * 1000
                 END
         WHERE [id_peminjaman] = @id_peminjaman;
         
@@ -239,6 +243,7 @@ namespace desainperpus_aran
                 command.Parameters.AddWithValue("@stok", stokTersedia + jumlahPinjam);
                 command.Parameters.AddWithValue("@id_peminjaman", id_peminjaman);
                 command.Parameters.AddWithValue("@id_buku", id_buku);
+                command.Parameters.AddWithValue("@tanggalKembaliString", tanggalKembaliString);
                 command.ExecuteNonQuery();
 
                 MessageBox.Show("Data berhasil dimasukan!", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);

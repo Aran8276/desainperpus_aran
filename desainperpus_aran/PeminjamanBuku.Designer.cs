@@ -142,9 +142,12 @@
             // jumlahBuku
             // 
             jumlahBuku.Location = new Point(246, 188);
+            jumlahBuku.Maximum = new decimal(new int[] { 2, 0, 0, 0 });
+            jumlahBuku.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             jumlahBuku.Name = "jumlahBuku";
             jumlahBuku.Size = new Size(67, 27);
             jumlahBuku.TabIndex = 29;
+            jumlahBuku.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // bSavePeminjaman
             // 

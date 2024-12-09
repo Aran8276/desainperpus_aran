@@ -267,10 +267,23 @@ namespace desainperpus_aran
                 {
                     try
                     {
+                        // Read jumlah pinjam from database
                         connection.Close();
                         connection.Open();
 
-                        string sql = "SELECT [stok] FROM [buku] WHERE [id_buku] = " + id_buku;
+                        string sql = "SELECT [jml_pinjam] FROM [peminjaman_buku] WHERE [id_peminjaman] = " + id_peminjaman;
+
+                        command = new SqlCommand(sql, connection);
+                        reader = command.ExecuteReader();
+                        reader.Read();
+
+                        int jumlahPinjamDb = Convert.ToInt32(reader["jml_pinjam"]);
+
+                        connection.Close();
+                        connection.Open();
+
+                        // Read stok buku
+                        sql = "SELECT [stok] FROM [buku] WHERE [id_buku] = " + id_buku;
 
                         command = new SqlCommand(sql, connection);
                         reader = command.ExecuteReader();
@@ -288,9 +301,9 @@ namespace desainperpus_aran
 
                         // Update peminjaman_buku table
                         sql = @"
-                UPDATE [peminjaman_buku]
-                SET id_buku = @id_buku, jml_pinjam = @jml_pinjam
-                WHERE id_peminjaman = @id_peminjaman";
+        UPDATE [peminjaman_buku]
+        SET id_buku = @id_buku, jml_pinjam = @jml_pinjam
+        WHERE id_peminjaman = @id_peminjaman";
 
                         command = new SqlCommand(sql, connection);
                         command.Parameters.AddWithValue("@id_buku", id_buku);
@@ -311,17 +324,17 @@ namespace desainperpus_aran
                         connection.Open();
 
                         sql = @"
-                UPDATE [buku]
-                SET [stok] = @stok
-                WHERE [id_buku] = @id_buku";
+        UPDATE [buku]
+        SET [stok] = @stok
+        WHERE [id_buku] = @id_buku";
 
                         command = new SqlCommand(sql, connection);
-                        command.Parameters.AddWithValue("@stok", stokTersedia - jumlahPinjam);
+                        command.Parameters.AddWithValue("@stok", stokTersedia - (jumlahPinjam - jumlahPinjamDb));
                         command.Parameters.AddWithValue("@id_buku", id_buku);
 
                         command.ExecuteNonQuery();
 
-                        MessageBox.Show("Update berhasil! (PERINGTAN: STOK BUKU JUGA SUDAH DIKURANGI)", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Update berhasil! (PERINGTAN: STOK BUKU JUGA SUDAH DI UPDATE)", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -339,7 +352,6 @@ namespace desainperpus_aran
                 MessageBox.Show("Silakan pilih data yang ingin diedit.", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         public void deleteData()
         {
             if (dataGridView1.CurrentRow.Selected)

@@ -32,7 +32,6 @@
             label8 = new Label();
             bDelete = new Button();
             bInsert = new Button();
-            panel1 = new Panel();
             dataGridView1 = new DataGridView();
             idPeminjaman = new ComboBox();
             label1 = new Label();
@@ -44,6 +43,8 @@
             nisSiswa = new ComboBox();
             label4 = new Label();
             namaSiswa = new TextBox();
+            label5 = new Label();
+            tanggalKembali = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)jumlahBuku).BeginInit();
             SuspendLayout();
@@ -94,14 +95,6 @@
             bInsert.UseVisualStyleBackColor = false;
             bInsert.Click += bInsert_Click;
             // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ActiveBorder;
-            panel1.Location = new Point(598, 295);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(244, 271);
-            panel1.TabIndex = 49;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -115,7 +108,7 @@
             // idPeminjaman
             // 
             idPeminjaman.FormattingEnabled = true;
-            idPeminjaman.Location = new Point(255, 371);
+            idPeminjaman.Location = new Point(218, 371);
             idPeminjaman.Name = "idPeminjaman";
             idPeminjaman.Size = new Size(151, 28);
             idPeminjaman.TabIndex = 51;
@@ -135,7 +128,7 @@
             // 
             idBuku.Enabled = false;
             idBuku.FormattingEnabled = true;
-            idBuku.Location = new Point(256, 433);
+            idBuku.Location = new Point(219, 433);
             idBuku.Name = "idBuku";
             idBuku.Size = new Size(225, 28);
             idBuku.TabIndex = 53;
@@ -153,7 +146,7 @@
             // judulBuku
             // 
             judulBuku.Enabled = false;
-            judulBuku.Location = new Point(255, 467);
+            judulBuku.Location = new Point(218, 467);
             judulBuku.Name = "judulBuku";
             judulBuku.Size = new Size(225, 27);
             judulBuku.TabIndex = 55;
@@ -171,7 +164,7 @@
             // jumlahBuku
             // 
             jumlahBuku.Enabled = false;
-            jumlahBuku.Location = new Point(255, 514);
+            jumlahBuku.Location = new Point(218, 514);
             jumlahBuku.Name = "jumlahBuku";
             jumlahBuku.Size = new Size(224, 27);
             jumlahBuku.TabIndex = 57;
@@ -180,7 +173,7 @@
             // 
             nisSiswa.Enabled = false;
             nisSiswa.FormattingEnabled = true;
-            nisSiswa.Location = new Point(257, 572);
+            nisSiswa.Location = new Point(220, 572);
             nisSiswa.Name = "nisSiswa";
             nisSiswa.Size = new Size(223, 28);
             nisSiswa.TabIndex = 58;
@@ -198,15 +191,34 @@
             // namaSiswa
             // 
             namaSiswa.Enabled = false;
-            namaSiswa.Location = new Point(256, 606);
+            namaSiswa.Location = new Point(219, 606);
             namaSiswa.Name = "namaSiswa";
             namaSiswa.Size = new Size(223, 27);
             namaSiswa.TabIndex = 60;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(391, 371);
+            label5.Name = "label5";
+            label5.Size = new Size(183, 31);
+            label5.TabIndex = 61;
+            label5.Text = "Tanggal Kembali";
+            // 
+            // tanggalKembali
+            // 
+            tanggalKembali.Location = new Point(580, 375);
+            tanggalKembali.Name = "tanggalKembali";
+            tanggalKembali.Size = new Size(250, 27);
+            tanggalKembali.TabIndex = 62;
             // 
             // PengembalianBuku
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(tanggalKembali);
+            Controls.Add(label5);
             Controls.Add(namaSiswa);
             Controls.Add(label4);
             Controls.Add(nisSiswa);
@@ -218,7 +230,6 @@
             Controls.Add(label1);
             Controls.Add(idPeminjaman);
             Controls.Add(dataGridView1);
-            Controls.Add(panel1);
             Controls.Add(bDelete);
             Controls.Add(bInsert);
             Controls.Add(search);
@@ -241,7 +252,6 @@
         private NumericUpDown numericUpDown1;
         private ComboBox comboBox2;
         private TextBox textBox2;
-        private Panel panel1;
         private DataGridView dataGridView1;
         private ComboBox idPeminjaman;
         private Label label1;
@@ -253,5 +263,7 @@
         private ComboBox nisSiswa;
         private Label label4;
         private TextBox namaSiswa;
+        private Label label5;
+        private DateTimePicker tanggalKembali;
     }
 }

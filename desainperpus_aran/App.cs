@@ -84,6 +84,7 @@ namespace desainperpus_aran
             peminjamanBuku1.ambilBuku(); // Refresh ComboBox Buku pada Peminjaman
             peminjamanBuku1.ambilSiswa(); // Refresh ComboBox Siswa pada Peminjaman
             pengembalianBuku1.ambilPeminjaman(); // Refresh ComboBox Peminjaman pada Pengembalian
+            dashboard1.getReport();
         }
     }
 }

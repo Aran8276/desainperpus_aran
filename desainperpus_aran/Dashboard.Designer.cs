@@ -32,10 +32,10 @@
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
             label4 = new Label();
-            label5 = new Label();
+            labelBuku = new Label();
             panel2 = new Panel();
             label3 = new Label();
-            label2 = new Label();
+            labelSiswa = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             panel3.BackColor = Color.SandyBrown;
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(label5);
+            panel3.Controls.Add(labelBuku);
             panel3.Location = new Point(531, 39);
             panel3.Name = "panel3";
             panel3.Size = new Size(221, 174);
@@ -71,21 +71,21 @@
             label4.TabIndex = 6;
             label4.Text = "Koleksi Buku";
             // 
-            // label5
+            // labelBuku
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(78, 39);
-            label5.Name = "label5";
-            label5.Size = new Size(64, 50);
-            label5.TabIndex = 5;
-            label5.Text = "20";
+            labelBuku.AutoSize = true;
+            labelBuku.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelBuku.Location = new Point(78, 39);
+            labelBuku.Name = "labelBuku";
+            labelBuku.Size = new Size(64, 50);
+            labelBuku.TabIndex = 5;
+            labelBuku.Text = "20";
             // 
             // panel2
             // 
             panel2.BackColor = Color.SandyBrown;
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(labelSiswa);
             panel2.Location = new Point(193, 39);
             panel2.Name = "panel2";
             panel2.Size = new Size(221, 174);
@@ -101,15 +101,15 @@
             label3.TabIndex = 4;
             label3.Text = "Siswa";
             // 
-            // label2
+            // labelSiswa
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(68, 39);
-            label2.Name = "label2";
-            label2.Size = new Size(85, 50);
-            label2.TabIndex = 3;
-            label2.Text = "200";
+            labelSiswa.AutoSize = true;
+            labelSiswa.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelSiswa.Location = new Point(68, 39);
+            labelSiswa.Name = "labelSiswa";
+            labelSiswa.Size = new Size(85, 50);
+            labelSiswa.TabIndex = 3;
+            labelSiswa.Text = "200";
             // 
             // Dashboard
             // 
@@ -133,9 +133,9 @@
         private PictureBox pictureBox2;
         private Panel panel3;
         private Label label4;
-        private Label label5;
+        private Label labelBuku;
         private Panel panel2;
         private Label label3;
-        private Label label2;
+        private Label labelSiswa;
     }
 }
